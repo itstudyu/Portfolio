@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certifications — William Mark</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg-light: #f0f4f8;
+        --bg: #f4f6f8;
         --white: #fff;
-        --primary: #2a5e7e;
-        --text-dark: #1f2833;
-        --text-light: #566270;
-        --radius: 8px;
+        --primary: #2b6cb0;
+        --text-dark: #2d3748;
+        --text-light: #718096;
+        --line: #81a4cd;
+        --radius: 12px;
       }
       * {
         margin: 0;
@@ -23,9 +24,9 @@
         box-sizing: border-box;
       }
       body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-light);
+        background: var(--bg);
         color: var(--text-dark);
+        font-family: "Inter", sans-serif;
         line-height: 1.6;
       }
       a {
@@ -33,45 +34,84 @@
         color: inherit;
       }
       .container {
-        max-width: 900px;
+        max-width: 900px; /* or 800px, whichever you choose */
         margin: 0 auto;
-        padding: 20px;
+        padding: 20px; /* keep it consistent */
       }
+
+      /* Navbar */
       nav {
         background: var(--white);
+        padding: 16px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         position: sticky;
         top: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        z-index: 100;
+        z-index: 10;
       }
       .nav-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
       }
       .logo {
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 1.2rem;
       }
       nav ul {
         list-style: none;
         display: flex;
-        gap: 20px;
+        gap: 24px;
       }
-      nav ul li a,
-      nav ul li a:visited {
+      nav li a,
+      nav li a:visited {
+        font-weight: 500;
         color: var(--text-dark);
       }
-      nav ul li a:hover,
-      nav ul li a.active {
+      nav li a:hover,
+      nav li a.active {
         color: var(--primary);
       }
+
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        background: var(--white);
+        border: 1px solid #cbd6e2;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        min-width: 160px;
+        z-index: 1000;
+      }
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+      .dropdown-content li {
+        list-style: none;
+      }
+      .dropdown-content li a {
+        display: block;
+        padding: 8px 12px;
+        color: var(--text-dark);
+      }
+      .dropdown-content li a:hover {
+        background: #f7fafc;
+      }
+
+      /* Section Header */
       section#certifications h2 {
         text-align: center;
         color: var(--primary);
-        margin: 40px 0 20px;
-        font-size: 2rem;
+        margin: 32px 0 24px;
+        font-size: 1.75rem;
       }
+
+      /* Cards */
       .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -80,13 +120,13 @@
       }
       .card {
         background: var(--white);
-        padding: 20px;
+        padding: 16px 20px;
         border-radius: var(--radius);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
+        transition: transform 0.2s;
       }
       .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-2px);
       }
       .card strong {
         display: block;
@@ -95,47 +135,16 @@
       }
       .card small {
         color: var(--text-light);
+        font-size: 0.9rem;
       }
+
       @media (max-width: 600px) {
+        .container {
+          padding: 24px 16px;
+        }
         .cards {
           grid-template-columns: 1fr;
         }
-      }
-      /* Dropdown container */
-      .dropdown {
-        position: relative;
-      }
-
-      /* Hidden by default */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        border: 1px solid #cbd6e2;
-        border-radius: 4px;
-        min-width: 180px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        z-index: 1000;
-      }
-
-      /* Each item */
-      .dropdown-content li {
-        list-style: none;
-      }
-      .dropdown-content li a {
-        display: block;
-        padding: 10px 16px;
-        color: var(--text-dark);
-      }
-      .dropdown-content li a:hover {
-        background: #f7f8fa;
-      }
-
-      /* When open, show it */
-      .dropdown.open .dropdown-content {
-        display: block;
       }
     </style>
   </head>
@@ -148,16 +157,15 @@
           <li><a href="index.html#about">Who I am</a></li>
           <li><a href="index.html#services">What I do</a></li>
           <li><a href="index.html#work">Projects</a></li>
-
-          <!-- DROP‑DOWN MENU -->
           <li class="dropdown">
             <a href="#" class="dropbtn">More ▾</a>
             <ul class="dropdown-content">
               <li><a href="experience.html">Experience</a></li>
-              <li><a href="certifications.html">Certifications</a></li>
+              <li>
+                <a href="certifications.html" class="active">Certifications</a>
+              </li>
             </ul>
           </li>
-
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -167,38 +175,40 @@
       <h2>Certifications</h2>
       <div class="cards">
         <div class="card">
-          <strong>Oracle Java SE 11 Developer</strong><small>Apr 2021</small>
+          <strong>Oracle Java SE 11 Developer</strong>
+          <small>Apr 2021</small>
         </div>
         <div class="card">
-          <strong>AWS Solutions Architect – Associate</strong
-          ><small>Jun 2022</small>
+          <strong>AWS Solutions Architect – Associate</strong>
+          <small>Jun 2022</small>
         </div>
         <div class="card">
-          <strong>Google Cloud Data Engineer</strong><small>Oct 2022</small>
+          <strong>Google Cloud Data Engineer</strong>
+          <small>Oct 2022</small>
         </div>
       </div>
     </section>
-  </body>
 
-  <script>
-    document.querySelectorAll(".dropbtn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const dd = btn.closest(".dropdown");
-        // close any other open dropdowns
-        document.querySelectorAll(".dropdown.open").forEach((d) => {
-          if (d !== dd) d.classList.remove("open");
+    <script>
+      // Dropdown toggle
+      document.querySelectorAll(".dropbtn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const dd = btn.closest(".dropdown");
+          document.querySelectorAll(".dropdown.open").forEach((d) => {
+            if (d !== dd) d.classList.remove("open");
+          });
+          dd.classList.toggle("open");
         });
-        dd.classList.toggle("open");
       });
-    });
-    // click outside to close
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".dropdown")) {
-        document
-          .querySelectorAll(".dropdown.open")
-          .forEach((d) => d.classList.remove("open"));
-      }
-    });
-  </script>
+      // Close on outside click
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+          document
+            .querySelectorAll(".dropdown.open")
+            .forEach((d) => d.classList.remove("open"));
+        }
+      });
+    </script>
+  </body>
 </html>

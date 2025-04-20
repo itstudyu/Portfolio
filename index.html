@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Your Name - Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William Mark | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Hello, I'm [Your Name]</h1>
-    <p>This is my portfolio.</p>
+    <!-- NAV -->
+    <nav>
+      <div class="container nav-inner">
+        <div class="logo">William</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">Who I am</a></li>
+          <li><a href="index.html#services">What I do</a></li>
+          <li><a href="index.html#work">Projects</a></li>
+
+          <!-- DROP‑DOWN MENU -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn">More ▾</a>
+            <ul class="dropdown-content">
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+          </li>
+
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Hey, I'm William</h1>
+          <p>A Frontend Developer creating modern and responsive websites.</p>
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="#" class="btn btn-outline">Resume</a>
+        </div>
+        <div class="hero-img">
+          <img src="https://via.placeholder.com/200" alt="Profile" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+      <h2>Who I am</h2>
+      <div class="content card">
+        <p>
+          I graduated from National University of Sciences and Technology (NUST)
+          in 2020 with a degree in Computer Engineering. I kicked off my
+          professional career as a mobile app developer working remotely for a
+          UK-based startup — Lessgo. The tech industry is ever-evolving and I
+          love being able to grow with it, while continually solidifying the
+          fundamentals. I open-source my code from a place of empathy — for
+          future developers, teammates, users, and with accessibility in mind. I
+          also love joining communities, helping and mentoring new developers,
+          and supporting organizations to promote diversity in tech.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <h2>What I do</h2>
+      <div class="cards">
+        <div class="card">
+          <strong>Mobile App Development</strong>
+          <p>I create pixel-perfect iOS and Android apps using Flutter.</p>
+        </div>
+        <div class="card">
+          <strong>Web Development</strong>
+          <p>I build responsive static websites using React.js.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="work" class="container">
+      <h2>Projects</h2>
+      <div class="cards">
+        <div class="card">
+          <strong>StarBook</strong>
+          <p>
+            A digital diary and mood tracking app that helps you keep track of
+            your mood and productivity throughout the month/year.
+          </p>
+        </div>
+        <div class="card">
+          <strong>QuranTalk</strong>
+          <p>
+            An emotional well-being and mental health app. The app helps people
+            navigate their emotions in the light of the Quran.
+          </p>
+        </div>
+        <div class="card">
+          <strong>Portfolio</strong>
+          <p>
+            A portfolio website template that helps you showcase your work,
+            projects and skills as a software developer or freelancer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2>Get in touch</h2>
+      <p style="text-align: center; max-width: 700px; margin: auto">
+        Coffee Chat! Please do not hesitate to schedule a meeting.
+        Alternatively, feel free to reach out directly by email at
+        <a href="mailto:your.email@example.com">your.email@example.com</a>.
+      </p>
+      <div style="text-align: center; margin-top: 20px">
+        <a href="mailto:your.email@example.com" class="btn btn-primary"
+          >Email Me</a
+        >
+        <a href="#" class="btn btn-outline">Schedule Meeting</a>
+      </div>
+    </section>
+
+    <!-- DROPDOWN SCRIPT -->
+    <script>
+      document.querySelectorAll(".dropbtn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const dd = btn.closest(".dropdown");
+          document.querySelectorAll(".dropdown.open").forEach((d) => {
+            if (d !== dd) d.classList.remove("open");
+          });
+          dd.classList.toggle("open");
+        });
+      });
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+          document
+            .querySelectorAll(".dropdown.open")
+            .forEach((d) => d.classList.remove("open"));
+        }
+      });
+    </script>
   </body>
 </html>

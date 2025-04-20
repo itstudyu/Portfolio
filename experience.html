@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience — William Mark</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f6f8;
+        --white: #fff;
+        --primary: #2b6cb0;
+        --text-dark: #2d3748;
+        --text-light: #718096;
+        --line: #81a4cd;
+        --radius: 12px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text-dark);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* Navbar */
+      nav {
+        background: var(--white);
+        padding: 16px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+      nav li a,
+      nav li a:visited {
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+      nav li a:hover,
+      nav li a.active {
+        color: var(--primary);
+      }
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        background: var(--white);
+        border: 1px solid #cbd6e2;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        min-width: 160px;
+      }
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+      .dropdown-content li {
+        list-style: none;
+      }
+      .dropdown-content li a {
+        display: block;
+        padding: 8px 12px;
+        color: var(--text-dark);
+      }
+      .dropdown-content li a:hover {
+        background: #f7fafc;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .header h1 {
+        font-size: 1.75rem;
+        color: var(--primary);
+        margin-bottom: 6px;
+      }
+      .header p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 32px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--line);
+        border-radius: 2px;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 32px;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-icon {
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: var(--white);
+        border: 4px solid var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .timeline-icon img {
+        width: 12px;
+        height: 12px;
+      }
+      .timeline-content {
+        background: var(--white);
+        margin-left: 36px;
+        padding: 16px 20px;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+      }
+      .timeline-content:hover {
+        transform: translateY(-2px);
+      }
+      .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .timeline-header h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .timeline-header .date {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        white-space: nowrap;
+      }
+      .timeline-content h4 {
+        margin: 4px 0 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+      .timeline-content p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 24px 16px;
+        }
+        .timeline {
+          padding-left: 24px;
+        }
+        .timeline-content {
+          margin-left: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <div class="logo">William</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">Who I am</a></li>
+          <li><a href="index.html#services">What I do</a></li>
+          <li><a href="index.html#work">Projects</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">More ▾</a>
+            <ul class="dropdown-content">
+              <li><a href="experience.html" class="active">Experience</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="header">
+        <h1>Experience</h1>
+        <p>My professional journey through roles and achievements.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/TikTok_logo.svg/1200px-TikTok_logo.svg.png"
+              alt="TikTok"
+            />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Machine Learning Engineer</h3>
+              <span class="date">June 2023 – Present</span>
+            </div>
+            <h4>TikTok Inc.</h4>
+            <p>
+              Improving ads ranking models with two-tower architectures and
+              fine-tuning LLMs.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <img
+              src="https://legatohealthtech.com/wp-content/uploads/2020/07/legato_logo.png"
+              alt="Legato"
+            />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Associate AI Engineer</h3>
+              <span class="date">June 2020 – Aug 2021</span>
+            </div>
+            <h4>Legato Health Technology</h4>
+            <p>
+              Automated healthcare pipelines for cancer prediction and process
+              optimization.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <img
+              src="https://muffito.com/wp-content/uploads/2023/01/cropped-Favicon-Muffito-512x512.png"
+              alt="Muffito"
+            />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Android & ML Developer</h3>
+              <span class="date">May 2018 – Oct 2018</span>
+            </div>
+            <h4>Muffito Inc.</h4>
+            <p>
+              Built Android app with OCR and face detection; designed web admin
+              panel.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <img src="https://freecopy.in/assets/img/logo.png" alt="FreeCopy" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Android Developer</h3>
+              <span class="date">Nov 2017 – Dec 2017</span>
+            </div>
+            <h4>FreeCopy Pvt. Ltd.</h4>
+            <p>
+              Migrated app to Firebase; implemented real-time event pipelines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Dropdown toggle
+      document.querySelectorAll(".dropbtn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const dd = btn.closest(".dropdown");
+          document.querySelectorAll(".dropdown.open").forEach((d) => {
+            if (d !== dd) d.classList.remove("open");
+          });
+          dd.classList.toggle("open");
+        });
+      });
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown"))
+          document
+            .querySelectorAll(".dropdown.open")
+            .forEach((d) => d.classList.remove("open"));
+      });
+    </script>
+  </body>
+</html>

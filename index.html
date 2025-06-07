@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>William Mark | Portfolio</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:...&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- HERO -->
-    <section id="home" class="hero container">
+    <header id="home" class="hero container">
       <div class="hero-inner">
         <div class="hero-content">
           <h1>Hey, I'm William</h1>
-          <p>A Frontend Developer creating modern and responsive websites.</p>
-          <a href="#contact" class="btn btn-primary">Contact Me</a>
-          <a href="docs/RESUME.docx" class="btn btn-outline">Resume</a>
+          <p>
+            A Full-Stack Developer creating modern, responsive applications.
+          </p>
+          <div class="buttons">
+            <a href="#contact" class="btn btn-primary" aria-label="Contact Me"
+              >Contact Me</a
+            >
+            <a
+              href="docs/RESUME.docx"
+              class="btn btn-outline"
+              aria-label="View Resume"
+              >Resume</a
+            >
+          </div>
         </div>
         <div class="hero-img">
-          <img src="./img/image.png" alt="Profile" />
+          <img src="./img/image.png" alt="William's Profile Picture" />
         </div>
       </div>
-    </section>
+    </header>
 
     <!-- ABOUT -->
     <section id="about" class="container">
       <h2>自己紹介</h2>
       <div class="content card">
         <p>
-          I graduated from National University of Sciences and Technology (NUST)
-          in 2020 with a degree in Computer Engineering. I kicked off my
-          professional career as a mobile app developer working remotely for a
-          UK-based startup — Lessgo. The tech industry is ever-evolving and I
-          love being able to grow with it, while continually solidifying the
-          fundamentals. I open-source my code from a place of empathy — for
-          future developers, teammates, users, and with accessibility in mind. I
-          also love joining communities, helping and mentoring new developers,
-          and supporting organizations to promote diversity in tech.
+          現在、株式会社Payrollにて
+          <strong>JavaアプリケーションおよびWeb画面開発</strong
+          >（Java・HTML・JavaScript・CSS）を担当。
+          フロントエンド・バックエンドの両方の経験があり、
+          APIを用いた外部システムとの連携や協力会社へのデータ送信を行っています。
+          要件定義から設計・開発まで一貫して対応可能です。
         </p>
       </div>
     </section>
@@ -49,12 +57,29 @@
       <h2>スキル</h2>
       <div class="cards">
         <div class="card">
-          <strong>Mobile App Development</strong>
-          <p>I create pixel-perfect iOS and Android apps using Flutter.</p>
+          <strong>Webアプリケーション開発</strong>
+          <p>
+            HTML / CSS / JavaScript /
+            TypeScriptを使用し、モダンでレスポンシブなWebアプリを構築しています。
+          </p>
         </div>
         <div class="card">
-          <strong>Web Development</strong>
-          <p>I build responsive static websites using React.js.</p>
+          <strong>Javaアプリケーション開発</strong>
+          <p>
+            Javaを用いて、業務系システムや社内ツールなどのバックエンドを設計・実装しています。
+          </p>
+        </div>
+        <div class="card">
+          <strong>要件定義～設計</strong>
+          <p>
+            クライアントとの要件整理から基本設計・詳細設計まで、上流工程も対応可能です。
+          </p>
+        </div>
+        <div class="card">
+          <strong>API設計・開発</strong>
+          <p>
+            社内外システムとの連携のため、REST APIの設計と実装を行っています。
+          </p>
         </div>
       </div>
     </section>
@@ -64,22 +89,24 @@
       <h2>プロジェクト</h2>
       <div class="cards">
         <div class="card">
-          <strong>MMC</strong>
+          <strong>MMC（三菱プロジェクト）</strong>
           <p>
-            A digital diary and mood tracking app that helps you keep track of
-            your mood and productivity throughout the month/year.
+            三菱グループ向けの専用アプリを開発。
+            工数入力や一覧画面など、工数管理に関わる機能をJavaとWeb技術で構築しました。
           </p>
         </div>
         <div class="card">
-          <strong>AWS</strong>
+          <strong>外部連携API</strong>
           <p>
-            An emotional well-being and mental health app. The app helps people
-            navigate their emotions in the light of the Quran.
+            外部システムと連携するREST
+            APIを設計・実装し、協力会社とのデータ連携を実現しました。
           </p>
         </div>
         <div class="card">
-          <strong>API</strong>
-          <p>I created the first API at my company</p>
+          <strong>UIXリニューアル</strong>
+          <p>
+            既存UIXをTypeScriptと最新フロントエンド技術で再構築し、ユーザビリティを向上させました。
+          </p>
         </div>
       </div>
     </section>
@@ -88,9 +115,8 @@
     <section id="contact" class="container">
       <h2>連絡先</h2>
       <p style="text-align: center; max-width: 700px; margin: auto">
-        Coffee Chat! Please do not hesitate to schedule a meeting.
-        Alternatively, feel free to reach out directly by email at
-        <a href="mailto:your.email@example.com">your.email@example.com</a>.
+        気軽にミーティングを予約するか、以下のメールアドレスまでご連絡ください：<br />
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
       </p>
       <div style="text-align: center; margin-top: 20px">
         <a href="mailto:your.email@example.com" class="btn btn-primary"
@@ -99,8 +125,6 @@
         <a href="#" class="btn btn-outline">Schedule Meeting</a>
       </div>
     </section>
-
-    <!-- DROPDOWN SCRIPT -->
 
     <script src="script.js"></script>
   </body>

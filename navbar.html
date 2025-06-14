@@ -8,13 +8,22 @@
       <li><a href="index.html#services">スキル</a></li>
       <li><a href="index.html#work">プロジェクト</a></li>
       <li class="dropdown">
-        <a href="#" class="dropbtn">その他 ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="experience.html">履歴</a></li>
-          <li><a href="certifications.html">資格</a></li>
+        <button
+          class="dropbtn"
+          aria-expanded="false"
+          aria-controls="dropdown-menu"
+        >
+          その他
+        </button>
+        <ul id="dropdown-menu" class="dropdown-content" role="menu">
+          <li role="none">
+            <a href="experience.html" role="menuitem">履歴</a>
+          </li>
+          <li role="none">
+            <a href="certifications.html" role="menuitem">資格</a>
+          </li>
         </ul>
       </li>
-      <li><a href="index.html#contact">連絡</a></li>
     </ul>
   </div>
 </nav>
